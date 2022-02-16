@@ -2,7 +2,7 @@ module ApplicationHelper
 
 #Onglet Title
 def title
- base_title = "Blog kamkar"
+ base_title = "kamkara Blog"
   if @title.nil?
   base_title
   else
