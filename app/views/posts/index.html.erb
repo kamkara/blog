@@ -6,6 +6,11 @@
      class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium",
     data: { "turbo_frame": 'new_post' } 
       %>
+
+      <!-- and finally add the links on the app/views/notes/index.html.erb page --> 
+<%= button_to "Export en CSV", download_posts_path(request.params.merge(format: :csv)), data: {turbo: :false} %>
+<%= button_to "Export en PDF", download_posts_path(request.params.merge(format: :pdf)), data: {turbo: :false} %>
+
   </div>
 
   <%= turbo_frame_tag :new_post %>

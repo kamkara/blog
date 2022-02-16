@@ -69,6 +69,14 @@ class PostsController < ApplicationController
   end
  end
 
+ # add method downlod in controller app/controllers/notes_controller.rb
+  def download
+    respond_to do |format|
+      format.csv { send_data Post.to_csv, filename: "post-#{Date.today}.csv" }
+      format.pdf { send_data Post.to_pdf, filename: "post-#{Date.today}.pdf" }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
